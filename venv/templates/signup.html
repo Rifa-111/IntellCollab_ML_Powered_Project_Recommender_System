@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+
+    <style>
+        /* Additional CSS specific to this page */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+        }
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .navigation ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .navigation ul li a:hover {
+            color: #ccc;
+        }
+        .signup-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .signup-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .signup-form input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .signup-button {
+            padding: 10px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .signup-button:hover {
+            background-color: #004080;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .login-link a:hover {
+            color: #004080;
+        }
+        /* Footer Styles */
+        .footer {
+            background-color: #0e3666;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .footer-section:last-child {
+            margin-right: 0;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #f8f8f8;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-media-links li {
+            margin-right: 10px;
+        }
+        .social-media-links li:last-child {
+            margin-right: 0;
+        }
+        .social-media-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #f8f8f8;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+
+
+
+
+        /* Additional CSS specific to this page */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.signup-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.signup-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+.signup-form input,
+.signup-form select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.signup-button {
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.signup-button:hover {
+    background-color: #004080;
+}
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+.login-link a {
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.login-link a:hover {
+    color: #004080;
+}
+.instruction {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ff0000;
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: #e50914;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Intellcollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    
+                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/login">Add a Project</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Signup Form 
+
+    <div class="container">
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="post" class="signup-form">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+               
+                <input type="password" id="re-enter_password" name="re-enter_password" placeholder="Re-Type Password" required>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
+        </div>
+    </div>
+-->
+
+<!-- Signup Form -->
+<!-- Signup Form 
+<div class="container">
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post" class="signup-form">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="re-enter_password" name="re-enter_password" placeholder="Re-Type Password" required>
+            <select id="user_type" name="user_type" required>
+                <option value="" disabled selected>Select User Type</option>
+                <option value="Academic">Academic</option>
+                <option value="Student">Student</option>
+                <option value="Industry Expert">Industry Expert</option>
+            </select>
+            <p id="email-instruction" class="instruction hidden">Please make sure your email format matches the selected user type.</p>
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
+    </div>
+</div>
+-->
+
+
+<!-- Signup Form -->
+<div class="container">
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        {% if message %}
+        <p class="error-message">{{ message }}</p>
+        {% endif %}
+        <form action="/signup" method="post" class="signup-form">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="re-enter_password" name="re-enter_password" placeholder="Re-Type Password" required>
+            <select id="user_type" name="user_type" required>
+                <option value="" disabled selected>Select User Type</option>
+                <option value="Academic">Academic</option>
+                <option value="Student">Student</option>
+                <option value="Industry Expert">Industry Expert</option>
+            </select>
+            <p id="email-instruction" class="instruction hidden">Please make sure your email format matches the selected user type.</p>
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
+    </div>
+</div>
+
+
+    <!-- Signup 
+    <div class="container">
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="post" class="signup-form">
+                <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter Password" required><br><br>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="industry">Industry Partner</option>
+                </select><br><br>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
+        </div>
+    </div>
+Form -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@intellcollab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Our Services</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media-links">
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 IntellCollab. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

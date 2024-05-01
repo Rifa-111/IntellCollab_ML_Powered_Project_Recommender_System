@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+    <style>
+        /* Additional CSS specific to this page */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+        }
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .navigation ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .navigation ul li a:hover {
+            color: #ccc;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #0056b3;
+            color: #fff;
+        }
+        .hero-title {
+            font-size: 36px;
+            margin: 0 0 20px;
+        }
+        .hero-subtitle {
+            font-size: 18px;
+            margin: 0 0 40px;
+        }
+        .hero-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero-button:hover {
+            background-color: #555;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+        .feature {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .feature-title {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .feature-description {
+            font-size: 16px;
+            margin: 0;
+        }
+        .research-links {
+            background-color: #fff;
+            padding: 60px 0;
+        }
+        .research-title {
+            font-size: 28px;
+            margin: 0 0 40px;
+            text-align: center;
+        }
+        .links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+        .link {
+            flex: 0 0 calc(33.333% - 40px);
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .link:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .link-title {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+        .link-description {
+            margin: 0 0 20px;
+        }
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .link-button:hover {
+            background-color: #555;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 40px;
+        }
+        .footer-section h3 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .social-media-links li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-media-links li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #ccc;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* Adjust image size */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+        /* Add styles for the slideshow */
+.slideshow-container {
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    transition: opacity 1s;
+}
+
+.mySlides:first-child {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #0e3666;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+.footer-section:last-child {
+    margin-right: 0;
+}
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #f8f8f8;
+}
+.social-media-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+.social-media-links li {
+    margin-right: 10px;
+}
+.social-media-links li:last-child {
+    margin-right: 0;
+}
+.social-media-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-media-links li a:hover {
+    color: #f8f8f8;
+}
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/login">Dashboard</a></li>
+                    
+                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/login">Add a Project</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form action="/search" method="GET" class="search-form">
+            <input type="text" id="search" name="search" placeholder="Search projects...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <h2 class="hero-title">Discover Your Next Research Project</h2>
+            <div class="slideshow-container">
+                <img class="mySlides" src="https://wallpapercave.com/wp/wp8797477.jpg" alt="Feature 1">
+                <img class="mySlides" src="https://e0.pxfuel.com/wallpapers/554/125/desktop-wallpaper-artificial-intelligence-logo-design-tip.jpg" alt="Feature 2">
+                <img class="mySlides" src="https://njbmagazine.com/wp-content/uploads/2021/03/Med-Tech_Web-775x500.jpg" alt="Feature 3">
+            </div>
+            <p class="hero-subtitle">Explore a vast collection of industry-academic research projects and collaborate with your fellow researchers and industry partners.</p>
+            <a href="/signup" class="hero-button">Get Started</a>
+        </section>
+    </div>
+    
+
+        <section class="features">
+            <div class="feature">
+                <img src="https://media.istockphoto.com/id/1150776990/vector/%C3%B0%C3%B0%C2%B5%C3%B0%C3%B1%C3%B0%C3%B1%C3%B0%C3%B0%C3%B1%C3%B0-2.jpg?s=612x612&w=0&k=20&c=J8qy9IxZ42caK1yDwu8Y9UNhX7fEhHVC-8A_WRXzKTA=" alt="Feature 2">
+                <h3 class="feature-title">Personalised Project Recommendations</h3>
+                <p class="feature-description">Receive personalised research project recommendations based on your preferences.</p>
+            </div>
+            <div class="feature">
+                <img src="https://media.istockphoto.com/id/1205246701/pt/vetorial/business-agreement-handshake-line-art-icon.jpg?s=612x612&w=0&k=20&c=Ma83CcJ04qsj3ztjBl0NCnyqeA7-9y4TyLdGjuobE0Q=" alt="Feature 2">
+                <h3 class="feature-title">Collaborate, Anytime</h3>
+                <p class="feature-description">Connect with industry partners, faculty members, researchers and students.</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" alt="Feature 3">
+                <h3 class="feature-title">Create Your Profile</h3>
+                <p class="feature-description">Build your own profile and discover projects.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Research Website Links -->
+    <div class="research-links">
+        <div class="container">
+            <h2 class="research-title">Explore Research Papers</h2>
+            <div class="links">
+                <div class="link">
+                    <h3 class="link-title">ResearchGate</h3>
+                    <p class="link-description">ResearchGate is a professional network for scientists and researchers to share and access scientific publications, research projects, and collaborate with peers globally.</p>
+                    <a href="https://www.researchgate.net/" target="_blank" class="link-button">Visit ResearchGate</a>
+                </div>
+                <div class="link">
+                    <h3 class="link-title">IEEE Xplore</h3>
+                    <p class="link-description">IEEE Xplore provides access to scientific and technical content published by the Institute of Electrical and Electronics Engineers (IEEE) and its publishing partners, including journals, conference proceedings, and standards.</p>
+                    <a href="https://ieeexplore.ieee.org/" target="_blank" class="link-button">Visit IEEE Xplore</a>
+                </div>
+                <div class="link">
+                    <h3 class="link-title">Google Scholar</h3>
+                    <p class="link-description">Google Scholar is a freely accessible web search engine that indexes the full text or metadata of scholarly literature across an array of publishing formats and disciplines.</p>
+                    <a href="https://scholar.google.com/" target="_blank" class="link-button">Visit Google Scholar</a>
+                </div>
+                <div class="link">
+                    <h3 class="link-title">PubMed</h3>
+                    <p class="link-description">PubMed is a free search engine accessing primarily the MEDLINE database of references and abstracts on life sciences and biomedical topics. The United States National Library of Medicine (NLM) at the National Institutes of Health maintains the database as part of the Entrez system of information retrieval.</p>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="link-button">Visit PubMed</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@intellcollab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Our Services</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media-links">
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 IntellCollab. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/login">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   Search Bar
+    <div class="search-container">
+        <form action="/search" method="GET" class="search-form">
+            <input type="text" id="search" name="search" placeholder="Search projects...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <h2 class="hero-title">Discover Your Next Research Project</h2>
+            <p class="hero-subtitle">Explore a vast collection of industry-academic research projects
+                and collaborate with your fellow researchers and industry partners.</p>
+            <a href="/signup" class="hero-button">Get Started</a>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <img src="{{ url_for('static', filename='https://upload.wikimedia.org/wikipedia/commons/e/e1/Computer_science_and_engineering.jpg') }}" alt="Feature 1">
+                <h3 class="feature-title">Personalised Project Recommendations</h3>
+                <p class="feature-description">Receive personalised research project recommendations based on your preferences.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='https://www.susu.ru/sites/default/files/styles/wide_news_image/public/field/image/znakcom-1418136-890x630.jpg?itok=U2BpqFaX') }}" alt="Feature 2">
+                <h3 class="feature-title">Collaborate, Anytime</h3>
+                <p class="feature-description">Connect with industry partners, faculties and students.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='feature3.jpg') }}" alt="Feature 3">
+                <h3 class="feature-title">Create Your Profile</h3>
+                <p class="feature-description">Build your own profile and discover projects.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+-->
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/login">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2 class="hero-title">Discover Your Next Research Project</h2>
+            <p class="hero-subtitle">Explore a vast collection of industry-academic research projects
+                and collaborate with your fellow researchers and industry partners.</p>
+            <a href="/signup" class="hero-button">Get Started</a>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <img src="{{ url_for('static', filename='https://upload.wikimedia.org/wikipedia/commons/e/e1/Computer_science_and_engineering.jpg') }}" alt="Feature 1">
+                <h3 class="feature-title">Personalised Project Recommendations</h3>
+                <p class="feature-description">Receive personalised research project recommendations based on your preferences.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='https://www.susu.ru/sites/default/files/styles/wide_news_image/public/field/image/znakcom-1418136-890x630.jpg?itok=U2BpqFaX') }}" alt="Feature 2">
+                <h3 class="feature-title">Collaborate, Anytime</h3>
+                <p class="feature-description">Connect with industry partners, faculties and students.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='feature3.jpg') }}" alt="Feature 3">
+                <h3 class="feature-title">Create Your Profile</h3>
+                <p class="feature-description">Build your own profile and discover projects.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+-->

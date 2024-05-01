@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px; /* Added margin-bottom */
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .navigation ul li:last-child {
+            margin-right: 0;
+        }
+
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navigation ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d10813;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 40px;
+        }
+        .footer-section h3 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .social-media-links li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-media-links li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #ccc;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0e3666;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .footer-section:last-child {
+            margin-right: 0;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #f8f8f8;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-media-links li {
+            margin-right: 10px;
+        }
+        .social-media-links li:last-child {
+            margin-right: 0;
+        }
+        .social-media-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #f8f8f8;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/add_project">Add a Project</a></li>
+                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+        <h2>Update Your Profile</h2>
+        <form action="/profile" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="skill1">Skill 1:</label>
+                <select id="skill1" name="skill1">
+                    {% for skill in skills %}
+                    <option value="{{ skill }}">{{ skill }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="skill2">Skill 2:</label>
+                <select id="skill2" name="skill2">
+                    {% for skill in skills %}
+                    <option value="{{ skill }}">{{ skill }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="interest1">Interest 1:</label>
+                <input type="text" id="interest1" name="interest1" required>
+            </div>
+            <div>
+                <label for="interest2">Interest 2:</label>
+                <input type="text" id="interest2" name="interest2" required>
+            </div>
+            <div>
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="Faculty">Faculty</option>
+                    <option value="Student">Student</option>
+                    <option value="Industry Partner">Industry Partner</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@intellcollab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Our Services</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media-links">
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 IntellCollab. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/login">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Update Your Profile</h2>
+        <form action="/update_profile" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="skill1">Skill 1:</label>
+                <select id="skill1" name="skill1">
+                    <option value="Skill 1">Machine Learning</option>
+                    <option value="Skill 2">python</option>
+                   
+                </select>
+            </div>
+            <div>
+                <label for="skill2">Skill 2:</label>
+                <select id="skill2" name="skill2">
+                    <option value="Skill 1">Machine Learning</option>
+                    <option value="Skill 2">Python</option>
+                   
+                </select>
+            </div>
+            <div>
+                <label for="interest1">Interest 1:</label>
+                <input type="text" id="interest1" name="interest1" required>
+            </div>
+            <div>
+                <label for="interest2">Interest 2:</label>
+                <input type="text" id="interest2" name="interest2" required>
+            </div>
+            <div>
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="Faculty">Faculty</option>
+                    <option value="Student">Student</option>
+                    <option value="Industry Partner">Industry Partner</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+-->

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+ 
+    <style>
+        /* General Styles */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Header Styles */
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+        }
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .navigation ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .navigation ul li a:hover {
+            color: #ccc;
+        }
+        /* Login Form Styles */
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-form button:hover {
+            background-color: #004080;
+        }
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
+            text-align: center;
+        }
+        /* Signup Link Styles */
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link a {
+            text-decoration: none;
+            color: #0056b3;
+            transition: color 0.3s;
+        }
+        .login-link a:hover {
+            color: #004080;
+        }
+        /* Footer Styles */
+        .footer {
+            background-color: #0e3666;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .footer-section:last-child {
+            margin-right: 0;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #f8f8f8;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-media-links li {
+            margin-right: 10px;
+        }
+        .social-media-links li:last-child {
+            margin-right: 0;
+        }
+        .social-media-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #f8f8f8;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Intellcollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Dashboard</a></li>
+                    
+                    <li><a href="/signup">Sign Up</a></li>
+                    <li><a href="/login">Add a Project</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Form -->
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/login" method="post" class="login-form">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        {% if message %}
+            <p class="error-message">{{ message }}</p>
+        {% endif %}
+        <!-- Signup Link -->
+        <p class="login-link">Don't have an account? <a href="/signup">Sign Up here</a></p> 
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@intellcollab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Our Services</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media-links">
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 IntellCollab. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1 class="logo">IntellCollab Login Page</h1>
+            <form action="/login" method="post" class="login-form">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit" class="login-button">Sign In</button>
+            </form>
+            {% if message %}
+                <p class="error-message">{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
+
+-->

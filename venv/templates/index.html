@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Projects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007bff;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+        .project-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .company-name {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .similarity {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/add_project">Add a Project</a></li>
+                    <li><a href="/">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Recommended Projects</h1>
+        <form action="/recommend_projects" method="post">
+            <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+            <input type="submit" value="Recommend Projects">
+        </form>
+        <ul>
+            {% for project, company, similarity in recommended_projects %}
+                <li>
+                    <div class="project-details">
+                        <div class="project-name">{{ project }}</div>
+                        <div class="company-name">{{ company }}</div>
+                        <div class="similarity">Similarity: {{ similarity }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+

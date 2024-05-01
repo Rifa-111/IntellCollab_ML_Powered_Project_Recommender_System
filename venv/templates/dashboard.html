@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Projects</title>
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .navigation ul li:last-child {
+            margin-right: 0;
+        }
+
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navigation ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        input[type="submit"],
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #d10813;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Recommended Projects Styles */
+        .project-details {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            color: #666;
+            margin-bottom: 5px;
+
+        }
+
+        .similarity {
+            color: #777;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0e3666;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .footer-section:last-child {
+            margin-right: 0;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #f8f8f8;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-media-links li {
+            margin-right: 10px;
+        }
+        .social-media-links li:last-child {
+            margin-right: 0;
+        }
+        .social-media-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #f8f8f8;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Dashboard</a></li>
+                    
+                    <li><a href="/add_project">Add a Project</a></li>
+                    
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <!--
+    <div class="container">
+        <h1>Recommended Projects</h1>
+        <form action="/recommend_projects" method="post">
+            <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+            <input type="submit" value="Recommend Projects">
+        </form>
+        <ul>
+            {% for project, company, similarity in recommended_projects %}
+                <li>
+                    <div class="project-details">
+                        <div class="project-name">{{ project }}</div>
+                        <div class="company-name">{{ company }}</div>
+                        <div class="similarity">Similarity: {{ similarity }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+-->
+
+<!-- Content -->
+
+
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter one or more skills seperated by a comma..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    <div class="skills"> {{skills}}</div>
+                    <div class="Project_Description">{{Project_Description}}</div>
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<!--Main
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+-->
+
+<!--
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+-->
+
+<!--
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project[0] }}</div>
+                    <div class="company-name">Company Name: {{ project[1] }}</div>
+                    <div class="similarity">Similarity: {{ project[2] }}</div>
+                    <div class="skills">Description: {{ project[3] }}</div>
+                    <div class="project-description">Description: {{ project[4] }}</div>
+                    
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+-->
+
+<!--
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    <div class="skills">Skills: {{ Skills }}</div>
+                    <div class="project-description">Description: {{ description }}</div>
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+-->
+
+    
+    
+
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@intellcollab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Our Services</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media-links">
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 IntellCollab. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Projects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007bff;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+        .project-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .company-name {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .similarity {
+            font-size: 14px;
+            color: #777;
+        }
+        /* Header Styles */
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            margin: 0;
+        }
+        .navigation ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+        .navigation ul li {
+            margin-right: 20px;
+        }
+        .navigation ul li:last-child {
+            margin-right: 0;
+        }
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/login">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Recommended Projects</h1>
+        <form action="/dashboard" method="post">
+            <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+            <input type="submit" value="Recommend Projects">
+        </form>
+        <ul>
+            {% for project, company, similarity in recommended_projects %}
+                <li>
+                    <div class="project-details">
+                        <div class="project-name">{{ project }}</div>
+                        <div class="company-name">{{ company }}</div>
+                        <div class="similarity">Similarity: {{ similarity }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
+-->
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntellCollab Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    < Search Bar -->
+    <!--<div class="search-container">
+        <form action="/search" method="GET" class="search-form">
+            <input type="text" id="search" name="search" placeholder="Search projects...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2 class="dashboard-heading">Welcome, {{ username }}!</h2>
+        <h3 class="dashboard-subheading">Recommended Projects:</h3>
+        <ul class="dashboard-list">
+            {% for project in projects %}
+                <li>
+                    <h3>{{ project["project_name"] }}</h3>
+                    <p>{{ project["description"] }}</p>
+                    <p>Skills Required: {{ project["skills"] }}</p>
+                    <p>Industry Company: {{ project["industry_company_name"] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+-->
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">IntellCollab</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div class="dashboard-container">
+        <h2 class="dashboard-subheading">Recommended Projects:</h2>
+        <ul class="dashboard-list">
+            {% for project in projects %}
+                <li>
+                    <h3>{{ project["project_name"] }}</h3>
+                    <p>{{ project["description"] }}</p>
+                    <p>Skills Required: {{ project["skills"] }}</p>
+                    <p>Industry Company: {{ project["industry_company_name"] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <h1 class="dashboard-heading">Welcome, {{ username }}!</h1>
+        <h2 class="dashboard-subheading">Recommended Projects:</h2>
+        <ul class="dashboard-list">
+            {% for project in projects %}
+                <li>
+                    <h3>{{ project["project_name"] }}</h3>
+                    <p>{{ project["description"] }}</p>
+                    <p>Skills Required: {{ project["skills"] }}</p>
+                    <p>Industry Company: {{ project["industry_company_name"] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <h1 class="dashboard-heading">Welcome, {{ username }}!</h1>
+        <h2 class="dashboard-subheading">Recommended Projects:</h2>
+        <ul class="dashboard-list">
+            {% for project in projects %}
+                <li>{{ project.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+-->
